@@ -4,13 +4,15 @@ export default {
         white: '#fff',
         gray: '#777',
         black: '#000',
-        primary: 'aqua',
+        default: '#ffadad',
+        primary: '#9bf6ff',
     },
     typography: {
         mainFont: 'Open Sans',
         baseFont: '16px',
         colorFont: '#333',
-        backColor: '#f2f2f2',
+        backColor: '#bdb2ff',
+        bold: 700,
     },
     layout: {
         maxWidth: '1200px',

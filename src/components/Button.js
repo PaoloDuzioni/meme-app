@@ -4,23 +4,25 @@ import styled, { css } from 'styled-components';
 // Styled components
 const Btn = styled.button`
     display: inline-block;
-    margin: 0.5rem;
-    padding: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: ${({ theme }) => theme.typography.bold};
     font-size: 16px;
-    color: ${({ theme }) => theme.colors.white};
+    color: rgba(0, 0, 0, 0.5);
     border: 0;
+    border-radius: 40px;
     outline: none;
     cursor: pointer;
     transition: background 0.4s, color 0.4s;
     // Modifica singola proprietà
     background: ${(props) =>
-        props.primary ? props.theme.colors.primary : props.theme.colors.black};
+        props.primary
+            ? props.theme.colors.primary
+            : props.theme.colors.default};
     // Modifica molteplici proprietà
-    ${({ primary }) =>
-        primary &&
+    ${({ margin }) =>
+        margin &&
         css`
-            border-radius: 4px;
-            color: rgba(0, 0, 0, 0.5);
+            margin: ${margin};
         `}
     // Hover
     &:hover {
@@ -35,7 +37,7 @@ const ShadowButton = styled(Btn)`
 `;
 
 // Main Component
-const Button = ({ primary, children }) => {
+const Button = ({ primary, margin, children }) => {
     // Methods
     const handleClick = () => {
         alert('Click!!');
@@ -43,10 +45,9 @@ const Button = ({ primary, children }) => {
 
     // Render
     return (
-        <ShadowButton primary={primary} onClick={handleClick}>
+        <ShadowButton primary={primary} margin={margin} onClick={handleClick}>
             {children}
         </ShadowButton>
     );
 };
-
 export default Button;
