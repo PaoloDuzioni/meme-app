@@ -7,7 +7,7 @@ const Btn = styled.button`
     padding: 0.75rem 1.5rem;
     font-weight: ${({ theme }) => theme.typography.bold};
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.6);
     border: 0;
     border-radius: 40px;
     outline: none;

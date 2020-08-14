@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from './components/Container';
 import Title from './components/Title';
+import ImageInput from './components/ImageInput';
 import Button from './components/Button';
 
 const AppStyles = styled.div`
@@ -16,9 +17,8 @@ const App = () => {
                     MEME Generator
                 </Title>
 
-                <Title as="h2" size="1.5" margin="0 0 1rem">
-                    What do you want to do?
-                </Title>
+                <ImageInput />
+
                 <Button primary margin="0 1rem 1rem 0">
                     Generate a new MEME
                 </Button>
