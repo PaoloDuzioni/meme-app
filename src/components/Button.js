@@ -7,12 +7,14 @@ const Btn = styled.button`
     margin: 0.5rem;
     padding: 1rem;
     font-size: 16px;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     border: 0;
     outline: none;
     cursor: pointer;
+    transition: background 0.4s, color 0.4s;
     // Modifica singola proprietà
-    background: ${(props) => (props.primary ? 'aqua' : '#333')};
+    background: ${(props) =>
+        props.primary ? props.theme.colors.primary : props.theme.colors.black};
     // Modifica molteplici proprietà
     ${({ primary }) =>
         primary &&
@@ -20,6 +22,11 @@ const Btn = styled.button`
             border-radius: 4px;
             color: rgba(0, 0, 0, 0.5);
         `}
+    // Hover
+    &:hover {
+        color: ${({ theme }) => theme.colors.white};
+        background: ${({ theme }) => theme.colors.gray};
+    }
 `;
 
 // Override a component (your own or 3rd party like materia-ui)
