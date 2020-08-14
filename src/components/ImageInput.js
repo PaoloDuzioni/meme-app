@@ -44,10 +44,11 @@ const ImageCaption = styled.div`
 
 // Main component
 const ImageInput = () => {
+    // State
     const [image, setImage] = useState(null);
 
-    const handleChange = (e) => {
-        console.log(e.target.files[0]);
+    // Methods
+    const handleChange = e => {
         const img = e.target.files[0];
         const newImage = {
             name: img.name,
@@ -57,10 +58,9 @@ const ImageInput = () => {
         setImage(newImage);
     };
 
+    // Render
     return (
         <ImageWrapper>
-            {/* How to upload un image from computer with react and node
-            https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/ */}
             <ImageLabel>
                 {image ? (
                     <img src={image.path} alt={image.name} />

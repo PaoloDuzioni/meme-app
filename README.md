@@ -1,5 +1,7 @@
-# React Meme Generator
+# React Meme Generator (work in progress)
 
 Simple project to create custom memes
 
-Still a work in progress
+- React JS
+- Styled Components
+- URL interface
