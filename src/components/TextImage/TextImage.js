@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from '../global/Title';
 
+// const newContext = React.createContext({ color: 'black' });
+
 // SUB COMPONENTS
 const TextWrapper = styled.section`
     width: 50%;

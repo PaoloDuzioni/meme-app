@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.typography.colorFont};
         background: ${({ theme }) => theme.typography.backColor}
     }
+
+    img{
+        max-width: 100%;
+    }
 `;
 
 export default GlobalStyle;

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-
+import React, { useState, useContext } from 'react';
+import MemeContext from '../../context/MemeContext';
 import ImageWrapper from './ImageWrapper';
 import ImageLabel from './ImageLabel';
 import ImageInput from './ImageInput';
 import ImageCaption from './ImageCaption';
+import ActiveImage from './ActiveImage';
 
-// Main component
 const UpdateImage = () => {
+    // Global state
+    const meme = useContext(MemeContext);
+    console.log('Context:', meme);
+
     // State
     const [image, setImage] = useState(null);
 
@@ -24,16 +28,16 @@ const UpdateImage = () => {
     // Render
     let label, caption;
     if (image) {
-        label = <img src={image.path} alt={image.name} />;
+        label = (
+            <ActiveImage
+                top={meme.topText}
+                bottom={meme.bottomText}
+                path={image.path}
+                altimg={image.name}
+            />
+        );
         caption = (
-            <ImageCaption>
-                <p>
-                    <b>Image name:</b> {image.name}
-                </p>
-                <p>
-                    <b>Image size:</b> {image.size} bytes
-                </p>
-            </ImageCaption>
+            <ImageCaption name={image.name} imgsize={image.size}></ImageCaption>
         );
     } else {
         label = 'Upload an image';
@@ -41,7 +45,7 @@ const UpdateImage = () => {
 
     return (
         <ImageWrapper>
-            <ImageLabel>{label}</ImageLabel>
+            <ImageLabel active={image}>{label}</ImageLabel>
             <ImageInput onChange={handleChange} />
             {caption}
         </ImageWrapper>

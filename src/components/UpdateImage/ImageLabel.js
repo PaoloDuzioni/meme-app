@@ -7,10 +7,9 @@ const ImageLabel = styled.label.attrs({
     justify-content: center;
     align-items: center;
     max-width: 450px;
-    min-height: 450px;
+    min-height: ${({ active }) => (active ? '0px' : '450px')};
     margin-right: 1rem;
     background-color: ${({ theme }) => theme.colors.secondary};
-    background-size: contain;
     border-radius: 5px;
     font-weight: ${({ theme }) => theme.typography.bold};
     font-size: 2em;

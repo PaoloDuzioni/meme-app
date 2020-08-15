@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AppWrapper from './components/layout/AppWrapper';
 import Container from './components/layout/Container';
 import MainContent from './components/layout/MainContent';
