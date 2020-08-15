@@ -1,55 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MemeContext } from '../../context/MemeContext';
 import styled from 'styled-components';
 import Title from '../global/Title';
+import TextWrapper from './TextWrapper';
+import TextWrapInput from './TextWrapInput';
+import TextLabel from './TextLabel';
+import TextInput from './TextInput';
+import TextLegenda from './TextLegenda';
 
-// const newContext = React.createContext({ color: 'black' });
-
-// SUB COMPONENTS
-const TextWrapper = styled.section`
-    width: 50%;
-`;
-
-const TextWrapInput = styled.div`
-    margin-bottom: 1rem;
-`;
-
-const TextLabel = styled.label.attrs(props => ({
-    htmlFor: props.point,
-}))`
-    display: block;
-    margin-bottom: 0.5rem;
-    color: ${({ theme }) => theme.colors.default};
-`;
-
-const TextInput = styled.input.attrs(props => ({
-    type: props.intype,
-    id: props.point,
-}))`
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 1rem;
-    border: none;
-    border-radius: 5px;
-`;
-
-// MAIN COMPONENTS
 const TextImage = () => {
+    // Global state
+    // state to read and dispatch to modify
+    const meme = useContext(MemeContext);
+
+    const handleTopText = e => {
+        meme.dispatch({ type: 'UPDATE_TOP', payload: e.target.value });
+    };
+
+    const handleBottomText = e => {
+        meme.dispatch({ type: 'UPDATE_BOTTOM', payload: e.target.value });
+    };
+
+    // Render
     return (
-        <TextWrapper>
+        <TextWrapper className={meme.state.imageSelected ? 'active' : ''}>
             <Title as="h3" fsize="1.5" margin="0 0 1rem">
-                Add custom text
+                Set here the text
             </Title>
 
             <TextWrapInput>
                 <TextLabel point="text-top">Top text</TextLabel>
-                <TextInput intype="text" point="text-top" />
+                <TextInput
+                    intype="text"
+                    point="text-top"
+                    onChange={handleTopText}
+                    value={meme.state.topText}
+                    disabled={!meme.state.imageSelected}
+                />
             </TextWrapInput>
 
             <TextWrapInput>
                 <TextLabel point="text-bottom">Bottom text</TextLabel>
-                <TextInput intype="text" point="text-bottom" />
+                <TextInput
+                    intype="text"
+                    point="text-bottom"
+                    onChange={handleBottomText}
+                    value={meme.state.bottomText}
+                    disabled={!meme.state.imageSelected}
+                />
             </TextWrapInput>
+
+            <TextLegenda>Both of the above text are optional.</TextLegenda>
         </TextWrapper>
     );
 };

@@ -5,6 +5,10 @@ const Caption = styled.div`
     margin-top: 1rem;
     p {
         font-size: 0.875em;
+        b {
+            font-weight: ${({ theme }) => theme.typography.normal};
+            color: ${({ theme }) => theme.colors.quaternary};
+        }
     }
 `;
 

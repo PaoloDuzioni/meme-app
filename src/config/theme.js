@@ -9,6 +9,7 @@ export default {
         primary: '#8be9fd',
         secondary: '#bd93f9',
         tertiary: '#ff79c6',
+        quaternary: '#50fa7b',
     },
     typography: {
         mainFont: 'Open Sans',
@@ -16,6 +17,7 @@ export default {
         colorFont: '#f8f8f2',
         backColor: '#282a36',
         bold: 700,
+        normal: 400,
     },
     layout: {
         maxWidth: '1200px',

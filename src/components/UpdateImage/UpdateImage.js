@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import MemeContext from '../../context/MemeContext';
+import { MemeContext } from '../../context/MemeContext';
 import ImageWrapper from './ImageWrapper';
 import ImageLabel from './ImageLabel';
 import ImageInput from './ImageInput';
@@ -8,10 +8,10 @@ import ActiveImage from './ActiveImage';
 
 const UpdateImage = () => {
     // Global state
+    // state to read and dispatch to modify
     const meme = useContext(MemeContext);
-    console.log('Context:', meme);
 
-    // State
+    // Local State
     const [image, setImage] = useState(null);
 
     // Methods
@@ -23,6 +23,10 @@ const UpdateImage = () => {
             path: URL.createObjectURL(img),
         };
         setImage(newImage);
+
+        if (!meme.state.imageSelected) {
+            meme.dispatch({ type: 'IMAGE_SELECTED' });
+        }
     };
 
     // Render
@@ -30,8 +34,8 @@ const UpdateImage = () => {
     if (image) {
         label = (
             <ActiveImage
-                top={meme.topText}
-                bottom={meme.bottomText}
+                top={meme.state.topText}
+                bottom={meme.state.bottomText}
                 path={image.path}
                 altimg={image.name}
             />

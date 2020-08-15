@@ -1,29 +1,31 @@
 import React from 'react';
+import { StateProvider } from './context/MemeContext';
 import AppWrapper from './components/layout/AppWrapper';
 import Container from './components/layout/Container';
 import MainContent from './components/layout/MainContent';
 import Title from './components/global/Title';
 import UpdateImage from './components/UpdateImage/UpdateImage';
-import Button from './components/global/Button';
 import TextImage from './components/TextImage/TextImage';
+import GenerateImage from './components/GenerateImage/GenerateImage';
 
 const App = () => {
     return (
         <AppWrapper>
             <Container>
-                <Title fsize="2" margin="0 0 2rem">
+                <Title primary fsize="2" margin="0 0 2rem">
                     MEME Generator
                 </Title>
 
-                <MainContent>
-                    <UpdateImage />
+                {/* Shared global state from here on */}
+                <StateProvider>
+                    <MainContent>
+                        <UpdateImage />
 
-                    <TextImage />
-                </MainContent>
+                        <TextImage />
+                    </MainContent>
 
-                <Button primary margin="0 1rem 1rem 0">
-                    Generate a new MEME
-                </Button>
+                    <GenerateImage />
+                </StateProvider>
             </Container>
         </AppWrapper>
     );

@@ -2,17 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Sub components
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+    id: 'active-image',
+})`
     position: relative;
+    width: 100%;
 `;
 
 const Text = styled.div`
     position: absolute;
     ${[props => props.pos]}: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em;
+    left: 0;
+    width: 100%;
+    padding: 0 1rem;
     text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 2em;
     text-shadow: 0px 0px 5px ${({ theme }) => theme.colors.black};
 `;
 
@@ -21,6 +27,7 @@ const Image = styled.img.attrs(({ path, altimg }) => ({
     alt: altimg,
 }))`
     display: block;
+    width: 100%;
 `;
 
 // Main Components

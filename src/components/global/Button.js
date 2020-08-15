@@ -12,9 +12,9 @@ const Btn = styled.button`
     border-radius: 40px;
     outline: none;
     cursor: pointer;
-    transition: background 0.4s, color 0.4s;
+    transition: background-color 0.4s, color 0.4s, opacity 0.4s;
     // Modifica singola proprietà
-    background: ${(props) =>
+    background: ${props =>
         props.primary
             ? props.theme.colors.primary
             : props.theme.colors.default};
@@ -29,6 +29,16 @@ const Btn = styled.button`
         color: ${({ theme }) => theme.colors.white};
         background: ${({ theme }) => theme.colors.gray};
     }
+    // Disabled
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.6);
+        background: ${props =>
+            props.primary
+                ? props.theme.colors.primary
+                : props.theme.colors.default};
+    }
 `;
 
 // Override a component (your own or 3rd party like materia-ui)
@@ -37,15 +47,15 @@ const ShadowButton = styled(Btn)`
 `;
 
 // Main Component
-const Button = ({ primary, margin, children }) => {
-    // Methods
-    const handleClick = () => {
-        alert('Click!!');
-    };
-
+const Button = ({ primary, margin, children, handleClick, isDisabled }) => {
     // Render
     return (
-        <ShadowButton primary={primary} margin={margin} onClick={handleClick}>
+        <ShadowButton
+            primary={primary}
+            margin={margin}
+            onClick={handleClick}
+            disabled={isDisabled}
+        >
             {children}
         </ShadowButton>
     );
