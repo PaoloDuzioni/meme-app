@@ -6,7 +6,7 @@ const ImageLabel = styled.label.attrs({
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 450px;
+    max-width: 450px;
     min-height: 450px;
     margin-right: 1rem;
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -14,7 +14,7 @@ const ImageLabel = styled.label.attrs({
     border-radius: 5px;
     font-weight: ${({ theme }) => theme.typography.bold};
     font-size: 2em;
-    color: ${({ theme }) => theme.colors.default};
+    color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
 `;
 

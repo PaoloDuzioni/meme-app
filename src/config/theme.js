@@ -1,19 +1,20 @@
 // MAIN APP THEME
 export default {
-    // https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff-fffffc
+    // https://draculatheme.com/contribute
     colors: {
-        white: '#fff',
+        white: '#f8f8f2',
         gray: '#777',
         black: '#000',
-        default: '#ffadad',
-        primary: '#9bf6ff',
-        secondary: '#FDFFB6',
+        default: '#f1fa8c',
+        primary: '#8be9fd',
+        secondary: '#bd93f9',
+        tertiary: '#ff79c6',
     },
     typography: {
         mainFont: 'Open Sans',
         baseFont: '16px',
-        colorFont: '#000',
-        backColor: '#bdb2ff',
+        colorFont: '#f8f8f2',
+        backColor: '#282a36',
         bold: 700,
     },
     layout: {

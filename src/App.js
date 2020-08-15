@@ -1,34 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
+
+import AppWrapper from './components/layout/AppWrapper';
 import Container from './components/layout/Container';
+import MainContent from './components/layout/MainContent';
 import Title from './components/global/Title';
 import UpdateImage from './components/UpdateImage/UpdateImage';
 import Button from './components/global/Button';
-
-const AppStyles = styled.div`
-    margin: 3rem 0;
-`;
+import TextImage from './components/TextImage/TextImage';
 
 const App = () => {
     return (
-        <AppStyles>
+        <AppWrapper>
             <Container>
-                <Title size="2" margin="0 0 2rem">
+                <Title fsize="2" margin="0 0 2rem">
                     MEME Generator
                 </Title>
 
-                {/* 
-                    Create a form board component here
-                    to organize image upload and the two
-                    text fileds for the meme generation
-                 */}
-                <UpdateImage />
+                <MainContent>
+                    <UpdateImage />
+
+                    <TextImage />
+                </MainContent>
 
                 <Button primary margin="0 1rem 1rem 0">
                     Generate a new MEME
                 </Button>
             </Container>
-        </AppStyles>
+        </AppWrapper>
     );
 };
 
