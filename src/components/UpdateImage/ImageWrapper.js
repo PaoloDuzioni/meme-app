@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const ImageWrapper = styled.div`
     position: relative;
-    display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 `;
 export default ImageWrapper;

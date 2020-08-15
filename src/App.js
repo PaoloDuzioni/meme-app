@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from './components/Container';
-import Title from './components/Title';
+import Container from './components/layout/Container';
+import Title from './components/global/Title';
 import UpdateImage from './components/UpdateImage/UpdateImage';
-import Button from './components/Button';
+import Button from './components/global/Button';
 
 const AppStyles = styled.div`
     margin: 3rem 0;
