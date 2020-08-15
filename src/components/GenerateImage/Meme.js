@@ -35,7 +35,7 @@ export const Meme = ({ path, close }) => {
             <MemeTitle as="h4" fsize="1.5" margin="0 0 2rem">
                 Click the image to download
             </MemeTitle>
-            <a href={path} download="my-awesome-mame">
+            <a href={path} download="my-awesome-mame.png">
                 <img src={path} alt="Generated Meme" />
             </a>
 
