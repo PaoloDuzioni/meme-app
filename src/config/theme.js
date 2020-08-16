@@ -21,5 +21,7 @@ export default {
     },
     layout: {
         maxWidth: '1200px',
+        smWidth: '600px',
+        xsWidth: '480px',
     },
 };
