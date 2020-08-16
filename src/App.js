@@ -4,9 +4,9 @@ import AppWrapper from './components/layout/AppWrapper';
 import Container from './components/layout/Container';
 import MainContent from './components/layout/MainContent';
 import Title from './components/global/Title';
-import UpdateImage from './components/UpdateImage/UpdateImage';
-import TextImage from './components/TextImage/TextImage';
-import GenerateImage from './components/GenerateImage/GenerateImage';
+import UpdateImage from './components/UpdateImage';
+import TextImage from './components/TextImage';
+import GenerateImage from './components/GenerateImage';
 
 const App = () => {
     return (
