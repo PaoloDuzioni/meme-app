@@ -15,6 +15,17 @@ const ImageLabel = styled.label.attrs({
     font-size: 2em;
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
+
+    @media all and (max-width: ${({ theme }) => theme.layout.smWidth}) {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    @media all and (max-width: ${({ theme }) => theme.layout.xsWidth}) {
+        margin-right: 0;
+        min-height: ${({ active }) => (active ? '0px' : '300px')};
+        font-size: 1.5em;
+    }
 `;
 
 export default ImageLabel;

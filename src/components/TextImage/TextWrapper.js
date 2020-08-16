@@ -7,6 +7,10 @@ const TextWrapper = styled.section`
     &.active {
         opacity: 1;
     }
+
+    @media all and (max-width: ${({ theme }) => theme.layout.smWidth}) {
+        width: 100%;
+    }
 `;
 
 export default TextWrapper;
