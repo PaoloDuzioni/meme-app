@@ -4,7 +4,7 @@ import AppWrapper from '../layout/AppWrapper';
 import Container from '../layout/Container';
 import MainContent from '../layout/MainContent';
 import Title from '../global/Title';
-import UpdateImage from './UpdateImage';
+import UploadImage from './UploadImage';
 import TextImage from './TextImage';
 import GenerateImage from './GenerateImage';
 
@@ -19,7 +19,7 @@ const App = () => {
                 {/* Shared global state from here on */}
                 <StateProvider>
                     <MainContent>
-                        <UpdateImage />
+                        <UploadImage />
 
                         <TextImage />
                     </MainContent>
