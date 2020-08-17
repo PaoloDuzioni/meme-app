@@ -98,7 +98,7 @@ const UpdateImage = () => {
             {caption}
 
             <WrapInput>
-                <Label htmlFor="image-url">Upload from URL</Label>
+                <Label htmlFor="image-url">Upload an image from URL</Label>
                 <Input
                     type="url"
                     value={urlExternal}
