@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { MemeContext } from '../../context/MemeContext';
+import { MemeContext } from '../../../context/MemeContext';
 import ImageWrapper from './ImageWrapper';
 import ImageLabel from './ImageLabel';
 import ImageInput from './ImageInput';

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Title from '../global/Title';
+import Title from '../../global/Title';
 
 const Wrapper = styled.section`
     position: fixed;
