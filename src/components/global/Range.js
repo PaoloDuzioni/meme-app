@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TextRange = styled.input.attrs({
+const Range = styled.input.attrs({
     type: 'range',
 })`
     appearance: none; /*removes default webkit styles*/
@@ -61,4 +61,4 @@ const TextRange = styled.input.attrs({
     }
 `;
 
-export default TextRange;
+export default Range;

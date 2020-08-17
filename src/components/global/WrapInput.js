@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const TextWrapInput = styled.div`
+const WrapInput = styled.div`
     margin-bottom: 1rem;
     ${props =>
         props.flex &&
@@ -15,4 +15,4 @@ const TextWrapInput = styled.div`
         `}
 `;
 
-export default TextWrapInput;
+export default WrapInput;

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { MemeContext } from '../../../context/MemeContext';
-import Title from '../../global/Title';
 import TextWrapper from './TextWrapper';
-import TextWrapInput from './TextWrapInput';
-import TextLabel from './TextLabel';
-import TextInput from './TextInput';
 import TextLegenda from './TextLegenda';
-import TextRange from './TextRange';
+import Title from '../../global/Title';
+import WrapInput from '../../global/WrapInput';
+import Label from '../../global/Label';
+import Input from '../../global/Input';
+import Range from '../../global/Range';
 
 const TextImage = () => {
     // Global state
@@ -50,21 +50,21 @@ const TextImage = () => {
                 Set here the text
             </Title>
 
-            <TextWrapInput>
-                <TextLabel htmlFor="text-top">Top text</TextLabel>
-                <TextInput
+            <WrapInput>
+                <Label htmlFor="text-top">Top text</Label>
+                <Input
                     intype="text"
                     id="text-top"
                     onChange={handleTopText}
                     value={meme.state.topText}
                     disabled={!meme.state.imageSelected}
                 />
-            </TextWrapInput>
+            </WrapInput>
 
-            <TextWrapInput flex>
+            <WrapInput flex>
                 <div>
-                    <TextLabel htmlFor="pos-top">Top text position</TextLabel>
-                    <TextRange
+                    <Label htmlFor="pos-top">Top text position</Label>
+                    <Range
                         id="pos-top"
                         min="0"
                         max="50"
@@ -74,8 +74,8 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <TextLabel htmlFor="size-top">Top text size</TextLabel>
-                    <TextRange
+                    <Label htmlFor="size-top">Top text size</Label>
+                    <Range
                         id="size-top"
                         min="1"
                         max="4"
@@ -85,25 +85,23 @@ const TextImage = () => {
                         onChange={e => handleTextSize(e, 'top')}
                     />
                 </div>
-            </TextWrapInput>
+            </WrapInput>
 
-            <TextWrapInput>
-                <TextLabel htmlFor="text-bottom">Bottom text</TextLabel>
-                <TextInput
+            <WrapInput>
+                <Label htmlFor="text-bottom">Bottom text</Label>
+                <Input
                     intype="text"
                     id="text-bottom"
                     onChange={handleBottomText}
                     value={meme.state.bottomText}
                     disabled={!meme.state.imageSelected}
                 />
-            </TextWrapInput>
+            </WrapInput>
 
-            <TextWrapInput flex>
+            <WrapInput flex>
                 <div>
-                    <TextLabel htmlFor="pos-bottom">
-                        Top text position
-                    </TextLabel>
-                    <TextRange
+                    <Label htmlFor="pos-bottom">Top text position</Label>
+                    <Range
                         id="pos-bottom"
                         min="0"
                         max="50"
@@ -113,8 +111,8 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <TextLabel htmlFor="size-bottom">Top text size</TextLabel>
-                    <TextRange
+                    <Label htmlFor="size-bottom">Top text size</Label>
+                    <Range
                         id="size-bottom"
                         min="1"
                         max="4"
@@ -124,7 +122,7 @@ const TextImage = () => {
                         onChange={e => handleTextSize(e, 'bottom')}
                     />
                 </div>
-            </TextWrapInput>
+            </WrapInput>
 
             <TextLegenda>Both of the above text are optional.</TextLegenda>
         </TextWrapper>
