@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { formatSizeUnits } from '../../../utils';
 
 const Caption = styled.div`
     margin-top: 1rem;
@@ -19,7 +20,7 @@ const ImageCaption = ({ name, imgsize }) => {
                 <b>Image name:</b> {name}
             </p>
             <p>
-                <b>Image size:</b> {imgsize} bytes
+                <b>Image size:</b> {formatSizeUnits(imgsize)}
             </p>
         </Caption>
     );

@@ -31,15 +31,15 @@ const Close = styled.div`
 
 export const Meme = ({ path, close }) => {
     return (
-        <Wrapper>
+        <Wrapper onClick={close}>
             <MemeTitle as="h4" fsize="1.5" margin="0 0 2rem">
                 Click the image to download
             </MemeTitle>
-            <a href={path} download="my-awesome-meme.png" onClick={close}>
+            <a href={path} download="my-awesome-meme.png">
                 <img src={path} alt="Generated Meme" />
             </a>
 
-            <Close onClick={close}>Close</Close>
+            <Close>Close</Close>
         </Wrapper>
     );
 };

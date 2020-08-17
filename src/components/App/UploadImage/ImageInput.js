@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const ImageInput = styled.input.attrs({
     id: 'up-img',
     type: 'file',
+    accept: 'image/*',
 })`
     position: absolute;
     top: 0;
