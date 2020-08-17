@@ -10,6 +10,7 @@ export default {
         secondary: '#bd93f9',
         tertiary: '#ff79c6',
         quaternary: '#50fa7b',
+        error: '#ff5555',
     },
     typography: {
         mainFont: 'Open Sans',
@@ -21,6 +22,7 @@ export default {
     },
     layout: {
         maxWidth: '1200px',
+        mdWidth: '768px',
         smWidth: '600px',
         xsWidth: '480px',
     },

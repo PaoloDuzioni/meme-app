@@ -4,7 +4,7 @@ const Range = styled.input.attrs({
     type: 'range',
 })`
     appearance: none; /*removes default webkit styles*/
-    width: 200px;
+    width: 100%;
     background: transparent;
     cursor: pointer;
     &:disabled {

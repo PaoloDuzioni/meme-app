@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { formatSizeUnits } from '../../../utils';
 
 const Caption = styled.div`
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     p {
         font-size: 0.875em;
         b {

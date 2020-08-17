@@ -7,6 +7,11 @@
  * @param {number} bytes number to be converted from bytes to
  */
 function formatSizeUnits(bytes) {
+    // Check if number
+    if (typeof bytes !== 'number') {
+        return bytes;
+    }
+
     let format;
     // Check
     if (bytes >= 1073741824) {
