@@ -97,7 +97,7 @@ const UpdateImage = () => {
             <ImageInput onChange={handleLocalImage} />
             {caption}
 
-            <WrapInput>
+            {/* <WrapInput>
                 <Label htmlFor="image-url">Upload an image from URL</Label>
                 <Input
                     type="url"
@@ -106,7 +106,7 @@ const UpdateImage = () => {
                     onChange={handleExternalImage}
                 />
                 {error}
-            </WrapInput>
+            </WrapInput> */}
         </ImageWrapper>
     );
 };
