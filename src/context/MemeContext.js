@@ -30,7 +30,7 @@ const StateProvider = ({ children }) => {
             case 'IMAGE_SELECTED':
                 return {
                     ...state,
-                    imageSelected: true,
+                    imageSelected: action.payload,
                 };
             case 'UPDATE_TOP_POS':
                 return {
