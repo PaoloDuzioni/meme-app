@@ -2,7 +2,11 @@ import React, { createContext, useReducer } from 'react';
 
 const initialState = {
     topText: 'Top Text',
+    topTextPos: 5,
+    topTextSize: 2,
     bottomText: 'Bottom Text',
+    bottomTextPos: 5,
+    bottomTextSize: 2,
     imageSelected: false,
 };
 
@@ -27,6 +31,26 @@ const StateProvider = ({ children }) => {
                 return {
                     ...state,
                     imageSelected: true,
+                };
+            case 'UPDATE_TOP_POS':
+                return {
+                    ...state,
+                    topTextPos: action.payload,
+                };
+            case 'UPDATE_BOTTOM_POS':
+                return {
+                    ...state,
+                    bottomTextPos: action.payload,
+                };
+            case 'UPDATE_TOP_SIZE':
+                return {
+                    ...state,
+                    topTextSize: action.payload,
+                };
+            case 'UPDATE_BOTTOM_SIZE':
+                return {
+                    ...state,
+                    bottomTextSize: action.payload,
                 };
             default:
                 throw new Error();

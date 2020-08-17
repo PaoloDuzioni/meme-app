@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const TextInput = styled.input.attrs(props => ({
     type: props.intype,
-    id: props.point,
 }))`
     width: 100%;
     height: 40px;

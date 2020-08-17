@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 // Styled components
 const Btn = styled.button`
+    appearance: none;
     display: inline-block;
     padding: 0.75rem 1.5rem;
     font-weight: ${({ theme }) => theme.typography.bold};
