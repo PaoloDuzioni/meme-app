@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { MemeContext } from '../../context/MemeContext';
+import { MemeContext } from '../../../context/MemeContext';
 import htmlToImage from 'html-to-image';
-import Button from '../global/Button';
+import Button from '../../global/Button';
 import Wrapper from './Wrapper';
 import Meme from './Meme';
 

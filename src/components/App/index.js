@@ -1,12 +1,12 @@
 import React from 'react';
-import { StateProvider } from './context/MemeContext';
-import AppWrapper from './components/layout/AppWrapper';
-import Container from './components/layout/Container';
-import MainContent from './components/layout/MainContent';
-import Title from './components/global/Title';
-import UpdateImage from './components/UpdateImage';
-import TextImage from './components/TextImage';
-import GenerateImage from './components/GenerateImage';
+import { StateProvider } from '../../context/MemeContext';
+import AppWrapper from '../layout/AppWrapper';
+import Container from '../layout/Container';
+import MainContent from '../layout/MainContent';
+import Title from '../global/Title';
+import UpdateImage from './UpdateImage';
+import TextImage from './TextImage';
+import GenerateImage from './GenerateImage';
 
 const App = () => {
     return (

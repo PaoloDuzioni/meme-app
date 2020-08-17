@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { MemeContext } from '../../context/MemeContext';
-import Title from '../global/Title';
+import { MemeContext } from '../../../context/MemeContext';
+import Title from '../../global/Title';
 import TextWrapper from './TextWrapper';
 import TextWrapInput from './TextWrapInput';
 import TextLabel from './TextLabel';

@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import Theme from './config/theme';
 import GlobalStyle from './config/globalStyles';
 
-import App from './App';
+import App from './components/App';
 
 import * as serviceWorker from './serviceWorker';
 
