@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TextInput = styled.input.attrs(props => ({
+const Input = styled.input.attrs(props => ({
     type: props.intype,
 }))`
     width: 100%;
@@ -20,4 +20,4 @@ const TextInput = styled.input.attrs(props => ({
     }
 `;
 
-export default TextInput;
+export default Input;
