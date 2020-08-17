@@ -14,12 +14,13 @@ export const GenerateImage = () => {
     const [image, setImage] = useState(null);
 
     // Methods
-    const handleClick = () => {
+    const generateMeme = () => {
         htmlToImage
             .toPng(document.getElementById('active-image'))
             .then(function (dataUrl) {
                 var img = new Image();
                 img.src = dataUrl;
+                img.crossOrigin = 'anonymous';
                 setImage(img.src);
             })
             .catch(function (error) {
@@ -27,24 +28,35 @@ export const GenerateImage = () => {
             });
     };
 
-    const resetImage = () => {
+    const resetMeme = () => {
+        meme.dispatch({ type: 'RESET_MEME' });
+    };
+
+    const closeMeme = () => {
         setImage(null);
     };
 
     // Render
     let memeImage;
     if (image) {
-        memeImage = <Meme path={image} close={resetImage} />;
+        memeImage = <Meme path={image} close={closeMeme} />;
     }
     return (
         <Wrapper>
             <Button
                 primary
                 margin="0 1rem 1rem 0"
-                handleClick={handleClick}
+                handleClick={generateMeme}
                 isDisabled={!meme.state.imageSelected}
             >
                 Generate a new MEME
+            </Button>
+            <Button
+                margin="0 1rem 1rem 0"
+                handleClick={resetMeme}
+                isDisabled={!meme.state.imageSelected}
+            >
+                Reset MEME settings
             </Button>
             {memeImage}
         </Wrapper>

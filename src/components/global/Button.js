@@ -14,23 +14,23 @@ const Btn = styled.button`
     outline: none;
     cursor: pointer;
     transition: background-color 0.4s, color 0.4s, opacity 0.4s;
-    // Modifica singola proprietà
+    /* Modifica singola proprietà */
     background: ${props =>
         props.primary
             ? props.theme.colors.primary
             : props.theme.colors.default};
-    // Modifica molteplici proprietà
+    /* Modifica molteplici proprietà */
     ${({ margin }) =>
         margin &&
         css`
             margin: ${margin};
         `}
-    // Hover
+
     &:hover {
         color: ${({ theme }) => theme.colors.white};
         background: ${({ theme }) => theme.colors.gray};
     }
-    // Disabled
+
     &:disabled {
         opacity: 0.5;
         cursor: not-allowed;

@@ -7,7 +7,7 @@ const initialState = {
     bottomText: 'Bottom Text',
     bottomTextPos: 5,
     bottomTextSize: 2,
-    imageSelected: false,
+    imageSelected: null,
 };
 
 const MemeContext = createContext(initialState);
@@ -52,6 +52,8 @@ const StateProvider = ({ children }) => {
                     ...state,
                     bottomTextSize: action.payload,
                 };
+            case 'RESET_MEME':
+                return initialState;
             default:
                 throw new Error();
         }
