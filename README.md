@@ -1,6 +1,6 @@
 # React Meme Generator
 
-![Version](https://img.shields.io/badge/version-0.2.0-success)
+![Version](https://img.shields.io/badge/version-0.3.0-success)
 
 ![App Screen](./src/assets/app-screenshot.png)
 

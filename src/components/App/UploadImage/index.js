@@ -32,6 +32,7 @@ const UpdateImage = () => {
         setImage(newImage);
         // clean eventaul external image url
         setUrlExternal('');
+        setUrlError(false);
 
         if (!meme.state.imageSelected) {
             meme.dispatch({ type: 'IMAGE_SELECTED', payload: true });
@@ -101,6 +102,7 @@ const UpdateImage = () => {
                 <Input
                     type="url"
                     value={urlExternal}
+                    placeholder="https://..."
                     onChange={handleExternalImage}
                 />
                 {error}
