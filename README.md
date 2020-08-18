@@ -15,5 +15,6 @@ Simple project to create custom memes. [See it live](https://pd-meme-generator.n
 - URL interface (Web APIs)
 - HTML to Image
 
-#### Note
-Still a work in progress in the very initial phase of the development so expect to see it changing, even drastically, at any time.
+---
+
+Stay safe and enjoy 😉
