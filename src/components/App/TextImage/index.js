@@ -58,7 +58,9 @@ const TextImage = () => {
 
             {/* Top Text */}
             <WrapInput>
-                <Label htmlFor="text-top">Top text</Label>
+                <Label primary htmlFor="text-top">
+                    Top text
+                </Label>
                 <Input
                     intype="text"
                     id="text-top"
@@ -70,7 +72,7 @@ const TextImage = () => {
 
             <WrapInput flex>
                 <div className={meme.state.textOutside ? 'inactive' : ''}>
-                    <Label htmlFor="pos-top">Top text position</Label>
+                    <Label htmlFor="pos-top">Text position</Label>
                     <Range
                         id="pos-top"
                         min="0"
@@ -83,7 +85,7 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="size-top">Top text size</Label>
+                    <Label htmlFor="size-top">Text size</Label>
                     <Range
                         id="size-top"
                         min="1"
@@ -98,7 +100,9 @@ const TextImage = () => {
 
             {/* Bottom Text */}
             <WrapInput>
-                <Label htmlFor="text-bottom">Bottom text</Label>
+                <Label primary htmlFor="text-bottom">
+                    Bottom text
+                </Label>
                 <Input
                     intype="text"
                     id="text-bottom"
@@ -110,7 +114,7 @@ const TextImage = () => {
 
             <WrapInput flex>
                 <div className={meme.state.textOutside ? 'inactive' : ''}>
-                    <Label htmlFor="pos-bottom">Top text position</Label>
+                    <Label htmlFor="pos-bottom">Text position</Label>
                     <Range
                         id="pos-bottom"
                         min="0"
@@ -123,7 +127,7 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="size-bottom">Top text size</Label>
+                    <Label htmlFor="size-bottom">Text size</Label>
                     <Range
                         id="size-bottom"
                         min="1"
@@ -139,6 +143,7 @@ const TextImage = () => {
             {/* Text outside */}
             <WrapInput>
                 <Switch
+                    primary={true}
                     label="Text outside the image"
                     checked={meme.state.textOutside}
                     disabled={!meme.state.imageSelected}

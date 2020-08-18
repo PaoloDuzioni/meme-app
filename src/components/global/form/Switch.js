@@ -32,7 +32,7 @@ const StyledSwitch = styled.div`
     label {
         position: relative;
         padding-left: ${size + 15}px;
-        color: ${({ theme }) => theme.colors.default};
+        color: ${({ theme }) => theme.colors.primary};
         &::before,
         &::after {
             content: '';
