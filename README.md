@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.2-success)
 
-![App Screen](./src/assets/app-screenshot.png)
+![App Screen](./src/assets/app-screen.png)
 
 Simple project to create custom memes. [See it live](https://pd-meme-generator.netlify.app/).
 
