@@ -7,6 +7,7 @@ const initialState = {
     bottomText: 'Bottom Text',
     bottomTextPos: 5,
     bottomTextSize: 2,
+    textOutside: false,
     imageSelected: null,
 };
 
@@ -27,11 +28,6 @@ const StateProvider = ({ children }) => {
                     ...state,
                     bottomText: action.payload,
                 };
-            case 'IMAGE_SELECTED':
-                return {
-                    ...state,
-                    imageSelected: action.payload,
-                };
             case 'UPDATE_TOP_POS':
                 return {
                     ...state,
@@ -51,6 +47,16 @@ const StateProvider = ({ children }) => {
                 return {
                     ...state,
                     bottomTextSize: action.payload,
+                };
+            case 'TEXT_OUTSIDE':
+                return {
+                    ...state,
+                    textOutside: !state.textOutside,
+                };
+            case 'IMAGE_SELECTED':
+                return {
+                    ...state,
+                    imageSelected: action.payload,
                 };
             case 'RESET_MEME':
                 return initialState;

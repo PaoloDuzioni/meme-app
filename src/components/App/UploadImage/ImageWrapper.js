@@ -4,6 +4,7 @@ const ImageWrapper = styled.div`
     position: relative;
     width: 50%;
     padding-right: 4rem;
+    transition: height 0.4s;
 
     @media all and (max-width: ${({ theme }) => theme.layout.mdWidth}) {
         padding-right: 1rem;

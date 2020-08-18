@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 /**
  * Input component
- * @param {string} type - the type to assign at the input HTML element
+ * @param {string} intype - the type to assign at the input HTML element
  */
 const Input = styled.input.attrs(props => ({
     type: props.intype,

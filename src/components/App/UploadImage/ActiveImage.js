@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MemeContext } from '../../../context/MemeContext';
 import styled, { css } from 'styled-components';
 
 // Sub components
@@ -7,13 +8,14 @@ const Wrapper = styled.div.attrs({
 })`
     position: relative;
     width: 100%;
+    background: ${({ theme }) => theme.colors.black};
 `;
 
 const Text = styled.div`
-    position: absolute;
+    position: ${props => (props.outside ? 'static' : 'absolute')};
     left: 0;
     width: 100%;
-    padding: 0 1rem;
+    padding: ${props => (props.outside ? '0.25rem 1rem' : '0 1rem')};
     text-transform: uppercase;
     text-align: center;
     line-height: 1.2;
@@ -21,11 +23,13 @@ const Text = styled.div`
     font-size: ${props => props.fsize}em;
     text-shadow: 0px 0px 5px ${({ theme }) => theme.colors.black};
     ${props =>
+        !props.outside &&
         props.pos === 'top' &&
         css`
             top: ${props => props.posPlace}%;
         `}
     ${props =>
+        !props.outside &&
         props.pos === 'bottom' &&
         css`
             bottom: ${props => props.posPlace}%;
@@ -41,24 +45,32 @@ const Image = styled.img.attrs(({ path, altimg }) => ({
 `;
 
 // Main Components
-const ActiveImage = ({
-    top,
-    topPos,
-    topSize,
-    bottom,
-    bottomPos,
-    bottomSize,
-    path,
-    altimg,
-}) => {
+const ActiveImage = () => {
+    // Global state
+    // state to read and dispatch to modify
+    const meme = useContext(MemeContext);
+
     return (
         <Wrapper>
-            <Text pos="top" posPlace={topPos} fsize={topSize}>
-                {top}
+            <Text
+                pos="top"
+                posPlace={meme.state.topTextPos}
+                fsize={meme.state.topTextSize}
+                outside={meme.state.textOutside}
+            >
+                {meme.state.topText}
             </Text>
-            <Image path={path} altimg={altimg} />
-            <Text pos="bottom" posPlace={bottomPos} fsize={bottomSize}>
-                {bottom}
+            <Image
+                path={meme.state.imageSelected.path}
+                altimg={meme.state.imageSelected.name}
+            />
+            <Text
+                pos="bottom"
+                posPlace={meme.state.bottomTextPos}
+                fsize={meme.state.bottomTextSize}
+                outside={meme.state.textOutside}
+            >
+                {meme.state.bottomText}
             </Text>
         </Wrapper>
     );

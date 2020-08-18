@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { MemeContext } from '../../../context/MemeContext';
 import ImageWrapper from './ImageWrapper';
 import ImageLabel from './ImageLabel';
@@ -11,6 +11,13 @@ const UpdateImage = () => {
     // Global state
     // state to read and dispatch to modify
     const meme = useContext(MemeContext);
+
+    // Set focus at first text input after setting the meme image
+    useEffect(() => {
+        const firstInput = document.getElementById('text-top');
+        firstInput.focus();
+        firstInput.select();
+    }, [meme.state.imageSelected]);
 
     // Methods
     const handleLocalImage = e => {
@@ -29,24 +36,8 @@ const UpdateImage = () => {
     // Render
     let label, caption;
     if (meme.state.imageSelected) {
-        label = (
-            <ActiveImage
-                top={meme.state.topText}
-                topPos={meme.state.topTextPos}
-                topSize={meme.state.topTextSize}
-                bottom={meme.state.bottomText}
-                bottomPos={meme.state.bottomTextPos}
-                bottomSize={meme.state.bottomTextSize}
-                path={meme.state.imageSelected.path}
-                altimg={meme.state.imageSelected.name}
-            />
-        );
-        caption = (
-            <ImageCaption
-                name={meme.state.imageSelected.name}
-                imgsize={meme.state.imageSelected.size}
-            ></ImageCaption>
-        );
+        label = <ActiveImage />;
+        caption = <ImageCaption />;
     } else {
         label = <NoImage>Upload an image from your computer</NoImage>;
     }

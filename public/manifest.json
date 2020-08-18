@@ -1,6 +1,6 @@
 {
-    "short_name": "Meme Generator",
-    "name": "A simple React Meme Generator",
+    "short_name": "The Meme Generator",
+    "name": "A simple app to create your meme.",
     "icons": [
         {
             "src": "favicon.ico",
@@ -20,6 +20,6 @@
     ],
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "theme_color": "#f8f8f2",
+    "background_color": "#282a36"
 }
