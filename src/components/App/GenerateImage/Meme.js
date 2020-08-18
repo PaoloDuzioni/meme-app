@@ -8,17 +8,28 @@ const Wrapper = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    padding: 2rem 1rem;
     background-color: rgba(0, 0, 0, 0.8);
+`;
+
+const InnerContainer = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1rem 0;
+    overflow-y: auto;
+    text-align: center;
 `;
 
 const MemeTitle = styled(Title)`
     color: ${({ theme }) => theme.colors.white};
+`;
+
+const Image = styled.img`
+    display: inline-block;
+    max-width: 800px;
+    margin-bottom: 2rem;
 `;
 
 const Close = styled.div`
@@ -32,13 +43,14 @@ const Close = styled.div`
 export const Meme = ({ path, close }) => {
     return (
         <Wrapper onClick={close}>
-            <MemeTitle as="h4" fsize="1.5" margin="0 0 2rem">
-                Click the image to download
-            </MemeTitle>
-            <a href={path} download="my-awesome-meme.png">
-                <img src={path} alt="Generated Meme" />
-            </a>
-
+            <InnerContainer>
+                <MemeTitle as="h4" fsize="1.5" margin="0 0 2rem">
+                    Click the image to download
+                </MemeTitle>
+                <a href={path} download="my-awesome-meme.png">
+                    <Image src={path} alt="Generated Meme" />
+                </a>
+            </InnerContainer>
             <Close>Close</Close>
         </Wrapper>
     );
