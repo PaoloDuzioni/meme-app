@@ -54,7 +54,7 @@ const Range = styled.input.attrs({
         outline: none;
     }
     &:focus::-webkit-slider-thumb {
-        background: red;
+        background: ${({ theme }) => theme.colors.tertiary};
     }
     &:focus::-moz-range-thumb {
         background: ${({ theme }) => theme.colors.tertiary};

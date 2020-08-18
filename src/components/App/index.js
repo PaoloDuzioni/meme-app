@@ -16,7 +16,7 @@ const App = () => {
             <Container>
                 <Title primary fsize="2" margin="0 0 2rem">
                     <Icon src={logo} width="50" alt="meme generator" />
-                    MEME Generator
+                    The MEME Generator
                 </Title>
 
                 {/* Shared global state from here on */}

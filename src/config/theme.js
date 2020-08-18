@@ -3,6 +3,7 @@ export default {
     // https://draculatheme.com/contribute
     colors: {
         white: '#f8f8f2',
+        lightGray: '#bbbabc',
         gray: '#777',
         black: '#000',
         default: '#f1fa8c',
