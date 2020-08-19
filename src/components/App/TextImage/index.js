@@ -72,7 +72,9 @@ const TextImage = () => {
 
             <WrapInput flex>
                 <div className={meme.state.textOutside ? 'inactive' : ''}>
-                    <Label htmlFor="pos-top">Text position</Label>
+                    <Label htmlFor="pos-top">
+                        Text position <span>[ {meme.state.topTextPos} ]</span>
+                    </Label>
                     <Range
                         id="pos-top"
                         min="0"
@@ -85,7 +87,9 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="size-top">Text size</Label>
+                    <Label htmlFor="size-top">
+                        Text size <span>[ {meme.state.topTextSize} ]</span>
+                    </Label>
                     <Range
                         id="size-top"
                         min="1"
@@ -114,7 +118,10 @@ const TextImage = () => {
 
             <WrapInput flex>
                 <div className={meme.state.textOutside ? 'inactive' : ''}>
-                    <Label htmlFor="pos-bottom">Text position</Label>
+                    <Label htmlFor="pos-bottom">
+                        Text position{' '}
+                        <span>[ {meme.state.bottomTextPos} ]</span>
+                    </Label>
                     <Range
                         id="pos-bottom"
                         min="0"
@@ -127,7 +134,9 @@ const TextImage = () => {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="size-bottom">Text size</Label>
+                    <Label htmlFor="size-bottom">
+                        Text size <span>[ {meme.state.bottomTextSize} ]</span>
+                    </Label>
                     <Range
                         id="size-bottom"
                         min="1"
