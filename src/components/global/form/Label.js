@@ -7,6 +7,12 @@ const Label = styled.label`
         props.primary
             ? props.theme.colors.primary
             : props.theme.colors.default};
+    span {
+        display: inline-block;
+        transform: translateY(-1px);
+        font-size: 0.75em;
+        color: ${({ theme }) => theme.colors.quaternary};
+    }
 `;
 
 export default Label;
