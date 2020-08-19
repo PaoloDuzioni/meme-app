@@ -52,26 +52,30 @@ const ActiveImage = () => {
 
     return (
         <Wrapper>
-            <Text
-                pos="top"
-                posPlace={meme.state.topTextPos}
-                fsize={meme.state.topTextSize}
-                outside={meme.state.textOutside}
-            >
-                {meme.state.topText}
-            </Text>
+            {meme.state.topText && (
+                <Text
+                    pos="top"
+                    posPlace={meme.state.topTextPos}
+                    fsize={meme.state.topTextSize}
+                    outside={meme.state.textOutside}
+                >
+                    {meme.state.topText}
+                </Text>
+            )}
             <Image
                 path={meme.state.imageSelected.path}
                 altimg={meme.state.imageSelected.name}
             />
-            <Text
-                pos="bottom"
-                posPlace={meme.state.bottomTextPos}
-                fsize={meme.state.bottomTextSize}
-                outside={meme.state.textOutside}
-            >
-                {meme.state.bottomText}
-            </Text>
+            {meme.state.bottomText && (
+                <Text
+                    pos="bottom"
+                    posPlace={meme.state.bottomTextPos}
+                    fsize={meme.state.bottomTextSize}
+                    outside={meme.state.textOutside}
+                >
+                    {meme.state.bottomText}
+                </Text>
+            )}
         </Wrapper>
     );
 };

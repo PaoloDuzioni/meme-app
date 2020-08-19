@@ -28,7 +28,8 @@ const MemeTitle = styled(Title)`
 
 const Image = styled.img`
     display: inline-block;
-    max-width: 800px;
+    width: 800px;
+    max-width: 100%;
     margin-bottom: 2rem;
 `;
 
